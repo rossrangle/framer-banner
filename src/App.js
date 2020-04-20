@@ -38,9 +38,18 @@ function App() {
   return (
     <div className="hero">
       <IconHolder icon={scene.icon} textImage={scene.textImage} />
-      <ImageHolder img={scene.image1} />
-      <ImageHolder img={scene.image2} />
-      <ImageHolder img={scene.image3} />
+      <ImageHolder
+        img={scene.image1}
+        className="animal-image animal-image__one"
+      />
+      <ImageHolder
+        img={scene.image2}
+        className="animal-image animal-image__two"
+      />
+      <ImageHolder
+        img={scene.image3}
+        className="animal-image animal-image__three"
+      />
     </div>
   );
 }

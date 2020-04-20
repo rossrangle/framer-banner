@@ -4,6 +4,23 @@
   background-color: purple;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  /* Do animation here */
+.icon-holder {
+}
+
+.icon {
+}
+
+.text-image {
+}
+
+.animal-image {
+}
+
+.animal-image__one {
+}
+
+.animal-image__two {
+}
+
+.animal-image__three {
 }
