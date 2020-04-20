@@ -1,26 +1,50 @@
 .hero {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   height: 80vh;
   min-height: 35rem;
-  background-color: purple;
+  background-color: rgb(255, 253, 247);
+
+  overflow: hidden;
+
+  border-bottom: solid 1px red;
 }
 
 .icon-holder {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon {
+  max-width: 18rem;
 }
 
 .text-image {
 }
 
 .animal-image {
+  position: absolute;
 }
 
 .animal-image__one {
+  left: -10rem;
 }
 
 .animal-image__two {
+  top: 0;
+  right: -5rem;
 }
 
 .animal-image__three {
+  bottom: -9rem;
+  right: -5rem;
 }
