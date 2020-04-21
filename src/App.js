@@ -6,7 +6,7 @@ import IconHolder from "./IconHolder";
 
 import { hedgehogScene, raccoonScene, squirrelScene } from "./scenes";
 
-const SLIDE_CHANGE_TIME_MS = 3000;
+const SLIDE_CHANGE_TIME_MS = 5000;
 
 function App() {
   const [currentScene, setCurrentScene] = useCycle(
