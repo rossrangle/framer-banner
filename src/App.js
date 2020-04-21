@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useCycle } from "framer-motion";
+
+import ImageHolder from "./ImageHolder";
+import IconHolder from "./IconHolder";
+
+import { hedgehogScene, raccoonScene, squirrelScene } from "./scenes";
+
+const SLIDE_CHANGE_TIME_MS = 3000;
 
 function App() {
+  const [currentScene, setCurrentScene] = useCycle(
+    hedgehogScene,
+    raccoonScene,
+    squirrelScene
+  );
+
+  useEffect(() => {
+    const timeOut = setTimeout(setCurrentScene, SLIDE_CHANGE_TIME_MS);
+    return () => clearTimeout(timeOut);
+  }, [currentScene, setCurrentScene]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="hero">
+      <IconHolder icon={currentScene.icon} text={currentScene.text} />
+      <ImageHolder
+        img={currentScene.image1}
+        className="animal-image animal-image__one"
+      />
+      <ImageHolder
+        img={currentScene.image2}
+        className="animal-image animal-image__two"
+      />
+      <ImageHolder
+        img={currentScene.image3}
+        className="animal-image animal-image__three"
+      />
     </div>
   );
 }

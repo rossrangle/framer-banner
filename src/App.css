@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+.hero {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 80vh;
+  min-height: 35rem;
+  background-color: rgb(255, 253, 247);
+
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.icon-holder {
+  position: relative;
+  z-index: 1;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  background-color: rgba(255, 253, 247, 0.5);
+  box-shadow: 0 0 10px 10px rgba(255, 253, 247, 0.5);
+  border-radius: 3rem;
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.icon-holder__icon {
+  width: 16rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.icon-holder__text {
+  font-size: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.animal-image {
+  position: absolute;
+}
+
+.animal-image img {
+  max-width: 100%;
+}
+
+.animal-image__one {
+  left: -10rem;
+  width: 50vw;
+  max-width: 670px;
+}
+
+.animal-image__two {
+  top: 0;
+  right: -5rem;
+  width: 50vw;
+  max-width: 500px;
+}
+
+.animal-image__three {
+  bottom: -9rem;
+  right: -5rem;
+  width: 50vw;
+  max-width: 634px;
+}
+
+@media screen and (max-width: 876px) {
+  .hero {
+    height: 70vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .icon-holder {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    padding-bottom: 7rem;
+  }
+
+  .icon-holder__icon {
+    max-width: 10rem;
+  }
+
+  .animal-image__one {
+    top: -5rem;
+    width: 80vw;
+  }
+
+  .animal-image__two {
+    right: 0rem;
+  }
+
+  .animal-image__three {
+    top: 18rem;
+    bottom: auto;
+    right: -5rem;
+    width: 50vw;
   }
 }
