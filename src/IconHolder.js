@@ -1,14 +1,12 @@
 import React from "react";
-import motion from "framer-motion";
 
 import "./App.css";
 
-/* Framer motion: animate SVGs */
-function IconHolder({ icon, textImage }) {
+function IconHolder({ icon, text }) {
   return (
     <div className="icon-holder">
-      <img src={icon.src} alt={icon.alt} class="icon" />
-      <img src={textImage.src} alt={textImage.alt} class="text-image" />
+      <img src={icon.src} alt={icon.alt} className="icon-holder__icon" />
+      <span className="icon-holder__text">{text}</span>
     </div>
   );
 }
