@@ -17,7 +17,7 @@ function IconHolder({ icon, text }) {
         >
           <img src={icon.src} alt={icon.alt} />
         </motion.div>
-        <motion.span
+        <motion.h1
           className="icon-holder__text"
           key={text}
           initial={{ y: "100%", opacity: 0 }}
@@ -26,7 +26,7 @@ function IconHolder({ icon, text }) {
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           {text}
-        </motion.span>
+        </motion.h1>
       </AnimatePresence>
     </div>
   );
