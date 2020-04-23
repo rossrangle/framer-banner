@@ -6,6 +6,7 @@ import IconHolder from "./IconHolder";
 
 import { hedgehogScene, raccoonScene, squirrelScene } from "./scenes";
 
+import "./App.css";
 const SLIDE_CHANGE_TIME_MS = 5000;
 
 function App() {
