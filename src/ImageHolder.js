@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const TRANSITION_TIME_OPACITY_S = 1;
 const TRANSITION_TIME_ROTATE_S = { MIN: 1.5, MAX: 2.5 };
@@ -14,25 +14,28 @@ function getRandomDelay(max_s) {
 
 function ImageHolder({ img, className }) {
   return (
-    <motion.div
-      key={img.src}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, rotate: [-2, 0, 2] }}
-      transition={{
-        duration: TRANSITION_TIME_OPACITY_S,
-        rotate: {
-          yoyo: Infinity,
-          duration: getRandomNumberBetween(
-            TRANSITION_TIME_ROTATE_S.MIN,
-            TRANSITION_TIME_ROTATE_S.MAX
-          ),
-          delay: getRandomDelay(TRANSITION_TIME_ROTATE_S),
-        },
-      }}
-      className={className ? className : undefined}
-    >
-      <img src={img.src} alt={img.alt} />
-    </motion.div>
+    <AnimatePresence>
+      <motion.div
+        key={img.src}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        animate={{ opacity: 1, rotate: [-2, 0, 2] }}
+        transition={{
+          duration: TRANSITION_TIME_OPACITY_S,
+          rotate: {
+            yoyo: Infinity,
+            duration: getRandomNumberBetween(
+              TRANSITION_TIME_ROTATE_S.MIN,
+              TRANSITION_TIME_ROTATE_S.MAX
+            ),
+            delay: getRandomDelay(TRANSITION_TIME_ROTATE_S),
+          },
+        }}
+        className={className ? className : undefined}
+      >
+        <img src={img.src} alt={img.alt} />
+      </motion.div>
+    </AnimatePresence>
   );
 }
 
