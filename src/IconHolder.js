@@ -7,6 +7,7 @@ const getVariants = (direction) => ({
   initial: {
     y: direction === "top" ? "-100%" : "100%",
     opacity: 0,
+    transition: { duration: ANIMATION_DURATION_S, ease: "easeInOut" },
   },
   animate: {
     y: 0,

@@ -2,7 +2,15 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const TRANSITION_TIME_OPACITY_S = 1;
-const TRANSITION_TIME_ROTATE_S = 2;
+const TRANSITION_TIME_ROTATE_S = { MIN: 1.5, MAX: 2.5 };
+
+function getRandomNumberBetween(min, max) {
+  return Math.floor(Math.random() * max) + min;
+}
+
+function getRandomDelay(max_s) {
+  return Math.random() * max_s;
+}
 
 function ImageHolder({ img, className }) {
   return (
@@ -14,7 +22,14 @@ function ImageHolder({ img, className }) {
         animate={{ opacity: 1, rotate: [-2, 0, 2] }}
         transition={{
           duration: TRANSITION_TIME_OPACITY_S,
-          rotate: { yoyo: Infinity, duration: TRANSITION_TIME_ROTATE_S },
+          rotate: {
+            yoyo: Infinity,
+            duration: getRandomNumberBetween(
+              TRANSITION_TIME_ROTATE_S.MIN,
+              TRANSITION_TIME_ROTATE_S.MAX
+            ),
+            delay: getRandomDelay(TRANSITION_TIME_ROTATE_S),
+          },
         }}
         className={className ? className : undefined}
       >
