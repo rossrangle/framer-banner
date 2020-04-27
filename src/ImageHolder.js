@@ -15,7 +15,6 @@ function getRandomDelay(max_s) {
 function ImageHolder({ img, className }) {
   return (
     <motion.div
-      key={img.src}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, rotate: [-6, 0, 6] }}
       transition={{
