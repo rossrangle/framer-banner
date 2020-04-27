@@ -19,7 +19,7 @@ function ImageHolder({ img, className }) {
         key={img.src}
         initial={{ opacity: 0 }}
         exit={{ opacity: 0 }}
-        animate={{ opacity: 1, rotate: [-2, 0, 2] }}
+        animate={{ opacity: 1, rotate: [-6, 0, 6] }}
         transition={{
           duration: TRANSITION_TIME_OPACITY_S,
           rotate: {
