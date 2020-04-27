@@ -8,7 +8,7 @@ function ImageHolder({ img, className }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, rotate: [-2, 0, 2] }}
+      animate={{ opacity: 1, rotate: [-6, 0, 6] }}
       transition={{
         duration: TRANSITION_TIME_OPACITY_S,
         rotate: { yoyo: Infinity, duration: TRANSITION_TIME_ROTATE_S },
